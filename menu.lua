@@ -15,13 +15,13 @@ local assdraw = require("mp.assdraw")
 local opts = require("mp.options")
 opts.read_options(settings, "simplemenu")
 
-local file = assert(io.open(mp.command_native({"expand-path", "~~/script-opts"}) .. "/menuitems.json"))
+local file = assert(io.open(mp.command_native({"expand-path", "~~/script-opts"}) .. "/menu.json"))
 local json = file:read("*all")
 file:close()
 local menu_items = utils.parse_json(json)
 
 if menu_items == nil then
-  error("Invalid JSON format in menuitems.json. Please run it through a linter. The script is disabled.")
+  error("Invalid JSON format in menu.json. Please run it through a linter. The script is disabled.")
 end
 
 for _, item in pairs(menu_items) do

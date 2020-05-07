@@ -2,7 +2,7 @@
 Simple mpv menu to launch commands from.
 
 This script allows you to make your own list of commands that you would like to have quick access to without
-the need to remember the keybind.
+the need to remember the specific keybind.
 
 ### Setup
 
@@ -34,14 +34,13 @@ end
 mp.register_script_message("my_custom_command", my_custom_command)
 ```
 
-You can then add it to the menu with
+You can then add it to the menu with the following
 
 ```json
 [
   {
     "title": "My custom command",
     "command": ["script-message", "my_custom_command", "some_data", true]
-  },
-  ...
+  }
 ]
 ```
