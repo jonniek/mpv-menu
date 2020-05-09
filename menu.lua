@@ -53,7 +53,11 @@ function execute()
     mp.command_native(command)
   end
 
-  remove_keybinds()
+  if menu_items[cursor].keep_open then
+    render()
+  else
+    remove_keybinds()
+  end
 end
 
 function toggle_menu()
@@ -149,7 +153,6 @@ end
 
 keybindstimer = mp.add_periodic_timer(settings.display_timeout, remove_keybinds)
 keybindstimer:kill()
-
 
 if menu_items and menu_size > 0 then
   mp.register_script_message("simplemenu-toggle", toggle_menu)

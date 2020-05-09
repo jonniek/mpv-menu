@@ -13,12 +13,17 @@ Example of the structure of the json
 ```json
 [
   {
-    "title": "Simply quit mpv",
+    "label": "Simply quit mpv",
     "command": ["quit"]
   },
   {
-    "title": "Set music profile by running two commands",
-    "command": [["apply-profile", "music-disable"], ["show-text", "Music!"]]
+    "label": "Set music profile by running two commands",
+    "command": [["apply-profile", "music-disable"], ["show-text", "Music!"]],
+  },
+  {
+    "label": "Increase brightness without closing menu",
+    "command": ["add", "brightness", "1"],
+    "keep_open": true
   }
 ]
 ```
